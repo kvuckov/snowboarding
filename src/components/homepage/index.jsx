@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
+import sendEmail from '../../utils/sendEmail';
 
 import bannerImage from '../../assets/boarder.png';
 import icon1 from '../../assets/mt-2197-icon1.png';
@@ -19,6 +20,26 @@ const Homepage = () => {
     const [email, setEmail] = React.useState(null);
     const [number, setNumber] = React.useState(null);
     const [comment, setComment] = React.useState(null);
+    const [send, setSend] = React.useState(null);
+
+    const validateSubmit = async () => {
+        if (name, email, number) {
+            const sendData = {
+                name,
+                email,
+                comment,
+                number
+            }
+
+            sendEmail(sendData).then(() => {
+                setSend(true);
+            }).catch(() => {
+                setSend(false);
+            });
+        } else {
+            setSend(false);
+        }
+    };
 
     return (
         <div className={style.homepage}>
@@ -64,7 +85,7 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
-            <div ref={ref} className={style.contact}>
+            {send !== true && send !== false &&<div ref={ref} className={style.contact}>
                 <h2>Dvodnevna škola snowboarda</h2>
                 <span>Po osobi <b>600 kuna / 80 eura</b></span>
                 <p>
@@ -88,8 +109,12 @@ const Homepage = () => {
                 <div className={style.custom_input}>
                     <textarea placeholder='Pitanja / Komentari' onChange={event => setComment(event.target.value)}/>
                 </div>
-                <Button />
-            </div>
+                <Button onClick={() => validateSubmit()} />
+            </div>}
+            {(send === true || send === false) && <div className={style.modal}>
+                <h3>{send ? 'Hvala Vam na interesu.' : 'Oooooops!'}</h3>
+                <p>{send ? 'Vaš zahtjev je poslan. Kontaktirati ćemo Vas u najkraćem mogućem roku.' : 'Nešto je pošlo po krivu. Molim Vas kontaktirajte nas direktno ili pokušajte ponovno.'}</p>
+            </div>}
             <div className={style.footer}>
                 <div>
                     <a data-action="call" href="tel:+385912711115">
