@@ -25,8 +25,12 @@
         img {
             position: absolute;
             height: 80%;
-            right: 8%;
+            right: 15%;
             z-index: 0;
+
+            @media only screen and (max-width: 850px) {
+                right: 8%;
+            }
         }
 
         > div {
