@@ -9,7 +9,6 @@ import image1 from '../../assets/tail_grab.png';
 import image2 from '../../assets/drop.JPG';
 import image3 from '../../assets/indy.jpg';
 import image4 from '../../assets/mute.jpg';
-import image5 from '../../assets/tail_grab.jpg';
 import phone from '../../assets/phone-call-icon.svg';
 import mail from '../../assets/mail-icon.svg';
 import Button from '../button';
@@ -77,11 +76,10 @@ const Homepage = () => {
                 <div className={style.homepage_wrapper}>
                     <div className={style.homepage_wrapper_image}>
                         <img src={image2} />
-                        <img src={image4} />
                     </div>
                     <div className={style.homepage_wrapper_image}>
                         <img src={image3} />
-                        <img src={image5} />
+                        <img src={image4} />
                     </div>
                 </div>
             </div>
@@ -89,8 +87,7 @@ const Homepage = () => {
                 <h2>Dvodnevna škola snowboarda</h2>
                 <span>Po osobi <b>600 kuna / 80 eura</b></span>
                 <p>
-                    Prijavi se već danas u grupu od 3 - 4 osobe sa potpunom snowboard opremom uključenom u cijenu i dođi naučiti bordati na Sljemenu!
-                    Trajanje škole je 8 sati (2 dana x 4 sata).
+                    Prijavi se već danas i dođi naučiti bordati na Sljemenu!
                     Mogućnost dogovaranja individualne poduke za početnike i naprednije.
                     Kontaktiraj nas za dogovore o terminima ili dodatne informacije!
                 </p>
@@ -120,7 +117,7 @@ const Homepage = () => {
                     <a data-action="call" href="tel:+385912711115">
                         <img src={phone} />
                     </a>
-                    <a href="mailto:kreso@maestral-kitesurfing.com?subject=Snowboard tečaj" target="_top">
+                    <a href="mailto:kreso77@gmail.com?subject=Snowboard tečaj" target="_top">
                         <img src={mail} />
                     </a>
                 </div>
