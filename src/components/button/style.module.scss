@@ -11,4 +11,10 @@
     justify-content: center;
     align-items: center;
     align-self: flex-end;
+
+    &.disabled {
+        cursor: default;
+        pointer-events: none;
+        background: #f15932a1;
+    }
 }

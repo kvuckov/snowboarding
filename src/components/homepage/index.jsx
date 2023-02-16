@@ -20,8 +20,10 @@ const Homepage = () => {
     const [number, setNumber] = React.useState(null);
     const [comment, setComment] = React.useState(null);
     const [send, setSend] = React.useState(null);
+    const [sending, setSending] = React.useState(false);
 
     const validateSubmit = async () => {
+        setSending(true);
         if (name, email, number) {
             const sendData = {
                 name,
@@ -31,11 +33,14 @@ const Homepage = () => {
             }
 
             sendEmail(sendData).then(() => {
+                setSending(false);
                 setSend(true);
             }).catch(() => {
+                setSending(false);
                 setSend(false);
             });
         } else {
+            setSending(false);
             setSend(false);
         }
     };
@@ -46,7 +51,7 @@ const Homepage = () => {
                 <img src={bannerImage} />
                 <div>
                     <span>Ubodi priliku i nauči bordati ove zime na Sljemenu!</span>
-                    <Button onClick={() => ref.current?.scrollIntoView({behavior: 'smooth'})} />
+                    <Button onClick={() => ref.current?.scrollIntoView({behavior: 'smooth'})} sending={sending} />
                 </div>
             </div>
             <div className={style.homepage_content}>
@@ -85,7 +90,7 @@ const Homepage = () => {
             </div>
             {send !== true && send !== false &&<div ref={ref} className={style.contact}>
                 <h2>Dvodnevna škola snowboarda</h2>
-                <span>Po osobi <b>600 kuna / 80 eura</b></span>
+                <span>Po osobi <b>85 eura</b></span>
                 <p>
                     Prijavi se već danas i dođi naučiti bordati na Sljemenu!
                     Mogućnost dogovaranja individualne poduke za početnike i naprednije.
@@ -106,7 +111,7 @@ const Homepage = () => {
                 <div className={style.custom_input}>
                     <textarea placeholder='Pitanja / Komentari' onChange={event => setComment(event.target.value)}/>
                 </div>
-                <Button onClick={() => validateSubmit()} />
+                <Button onClick={() => validateSubmit()} sending={sending} />
             </div>}
             {(send === true || send === false) && <div className={style.modal}>
                 <h3>{send ? 'Hvala Vam na interesu.' : 'Oooooops!'}</h3>

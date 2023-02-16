@@ -3,8 +3,8 @@ import style from './style.module.scss';
 
 const Button = (props) => {
     return (
-        <div className={style.button} onClick={props.onClick}>
-            Prijavi se
+        <div className={[style.button, props.sending ? style.disabled : ''].join(' ')} onClick={props.onClick}>
+            {props.sending ? 'Slanje...' : 'Prijavi se'}
         </div>
     );
 };
