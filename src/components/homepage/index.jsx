@@ -50,13 +50,13 @@ const Homepage = () => {
             <div className={style.homepage_banner}>
                 <img src={bannerImage} />
                 <div>
-                    <span>Ubodi priliku i nauči bordati ove zime na Sljemenu!</span>
+                    <span>Snowboard sezona još traje, iskoristi priliku i nauči bordati na Sljemenu!</span>
                     <Button onClick={() => ref.current?.scrollIntoView({behavior: 'smooth'})} sending={sending} />
                 </div>
             </div>
             <div className={style.homepage_content}>
                 <h2>Što nudimo</h2>
-                <p>Škole vode iskusni licencirani učitelji snowboarda u malim grupama od <b>3 - 4 osobe</b> po učitelju. Radimo i sa djecom i sa odraslima. <br/>Trajanje škole je <b>8 sati</b> (2 dana x 4 sata).<br/><b>Najam opreme</b> (daske, vezova i buca) je <b>uključen u cijenu</b>.</p>
+                <p>Grupne i individualne tečajeve snowboarda koje vode iskusni licencirani učitelji snowboarda. Radimo s djecom i odraslima. <br/>Grupne škole: radimo u malim grupama od 3 - 4 osobe po učitelju. Trajanje škole je 8 sati (2 dana x 4 sata). Najam opreme (daske, vezova i buca) je uključen u cijenu.<br/>Individualna poduka: fleksibilni termini i rad 1 na 1 u trajanju od 2-3 sata po danu.</p>
                 <div className={style.homepage_items}>
                     <div>
                         <img src={icon1}/>
@@ -74,7 +74,7 @@ const Homepage = () => {
                     <div>
                         <h2>Ne propustite nove avanture</h2>
                         <p>Bordanje pruža adrenalinski osjećaj brzine i slobode kretanja po snijegu, a sve što ti treba da savladaš osnove su
-                        dva dana, nešto truda i dobre volje. Zato ubodi priliku i dođi na Sljeme, diši čisti planinski zrak i nauči se spuštati niz
+                        dva dana, nešto truda i dobre volje. Zato iskoristi priliku i dođi na Sljeme, diši čisti planinski zrak i nauči se spuštati niz
                         padinu.</p>
                     </div>
                 </div>
@@ -89,12 +89,12 @@ const Homepage = () => {
                 </div>
             </div>
             {send !== true && send !== false &&<div ref={ref} className={style.contact}>
-                <h2>Dvodnevna škola snowboarda</h2>
+                <h2>Dvodnevna grupna škola snowboarda</h2>
                 <span>Po osobi <b>85 eura</b></span>
+                <h2>Individualna škola snowboarda</h2>
+                <span><b>20 eura</b> / sat, dodatno najam opreme</span>
                 <p>
-                    Prijavi se već danas i dođi naučiti bordati na Sljemenu!
-                    Mogućnost dogovaranja individualne poduke za početnike i naprednije.
-                    Kontaktiraj nas za dogovore o terminima ili dodatne informacije!
+                    Kontaktiraj nas za dogovore termina ili dodatne informacije!
                 </p>
                 <div className={[style.custom_input, name ? '' : style.empty].join(' ')}>
                     <input type="text" placeholder='Ime i Prezime*' onChange={event => setName(event.target.value)}/>
